@@ -16,9 +16,16 @@ Connects to Azure DevOps Pipeline Logging module.
 
 ### SYNTAX
 
+#### default (Default)
 ```
-Connect-PipelineLogging [-PAT] <SecureString> [-Organization] <String> [-Project] <String>
+Connect-PipelineLogging -PAT <SecureString> -Organization <String> -Project <String>
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
+
+#### url
+```
+Connect-PipelineLogging -PAT <SecureString> -Url <String> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ### DESCRIPTION
@@ -42,7 +49,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -53,11 +60,11 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: default
 Aliases:
 
 Required: True
-Position: 2
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -68,11 +75,26 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: default
 Aliases:
 
 Required: True
-Position: 3
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+#### -Url
+
+
+```yaml
+Type: String
+Parameter Sets: url
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
