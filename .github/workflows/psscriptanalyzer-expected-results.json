@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "RuleName": "PSUseOutputTypeCorrectly",
+        "ScriptName": "Get-PipelineLoggingResource.ps1",
+        "Line": 48
+    }
+]
