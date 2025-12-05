@@ -2,7 +2,8 @@ function Get-PipelineLoggingPipelineRun {
     [CmdletBinding(DefaultParameterSetName = "pipeline")]
 
     Param(
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true, ParameterSetName = "pipeline")]
+        [Alias("id")]
         [string] $PipelineId,
         
         [Parameter(Mandatory = $true, ParameterSetName = "run")]

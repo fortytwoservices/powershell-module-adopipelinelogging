@@ -16,7 +16,10 @@ function Search-PipelineLogging {
 
         [Parameter(Mandatory = $false)]
         [ValidateRange(1, [int]::MaxValue)]
-        [int] $Latest = [int]::MaxValue 
+        [int] $Latest = [int]::MaxValue ,
+
+        [Parameter(Mandatory = $false)]
+        [DateTime] $Since = [datetime]::MinValue 
     )
 
     Process {
@@ -24,6 +27,7 @@ function Search-PipelineLogging {
         $runs = Get-PipelineLoggingPipelineRun -PipelineId $PipelineId | 
         Where-Object finishedDate | 
         Sort-Object finishedDate -Descending | 
+        Where-Object { $_.finishedDate -ge $Since } |
         Select-Object -First $Latest
 
         $runs |

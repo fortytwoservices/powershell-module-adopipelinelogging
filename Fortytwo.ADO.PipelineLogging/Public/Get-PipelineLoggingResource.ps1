@@ -10,7 +10,7 @@ function Get-PipelineLoggingResource {
     )
 
     Process {
-        if(!$Script:Headers) {
+        if (!$Script:Headers) {
             throw "Please connect first"
         }
         
@@ -30,16 +30,21 @@ function Get-PipelineLoggingResource {
         }
 
 
-        if($Single.IsPresent) {
+        if ($Single.IsPresent) {
             Write-Verbose "Getting single resource from $Url"
             Invoke-RestMethod -Uri $Url -Headers $Script:Headers
+            return
         }
 
-        while($Url) {
+        $values = @()
+        while ($Url) {
             Write-Verbose "Getting resources from $Url"
             $response = Invoke-RestMethod -Uri $Url -Headers $Script:Headers
-            $response.value            
+            if ($response.value) {
+                $response.value | ForEach-Object { $values += $_ }
+            }
             $Url = $response.ContinuationToken
-        }        
+        }
+        $values  
     }
 }
