@@ -2,17 +2,6 @@ Import-Module ./Fortytwo.ADO.PipelineLogging -Force -Verbose
 $PAT ??= Read-Host -AsSecureString "Enter your Azure DevOps Personal Access Token"
 Connect-PipelineLogging -PAT $PAT -Organization "ORG" -Project "PROJECT"
 
-
-
-# Get-PipelineLoggingResource -Url "pipelines" -Verbose |fl
-# Get-PipelineLoggingResource -Url "https://dev.azure.com/dnvgl-gssit/a09a2df3-8560-4a26-baa8-f1e134945871/_apis/pipelines/1987?revision=2"
-
-# Get-PipelineLoggingPipeline | ? name -like "PROD - Additional account*" | Get-PipelineLoggingPipelineRun
-
-# Get-PipelineLoggingPipelineRun -Id 2100
-
-
-
 $pipelines = Get-PipelineLoggingPipeline | Where-Object name -like "PROD - Additional account*"
 
 $date = (Get-Date).AddDays(-7)
