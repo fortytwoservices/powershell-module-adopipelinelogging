@@ -1,6 +1,6 @@
 Import-Module ./Fortytwo.ADO.PipelineLogging -Force -Verbose
 $PAT ??= Read-Host -AsSecureString "Enter your Azure DevOps Personal Access Token"
-Connect-PipelineLogging -PAT $PAT -Organization "dnvgl-gssit" -Project "IAM-VERIT"
+Connect-PipelineLogging -PAT $PAT -Organization "ORG" -Project "PROJECT"
 
 
 
