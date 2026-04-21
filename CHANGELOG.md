@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/fortytwoservices/powershell-module-adopipelinelogging/compare/v0.2.0...v0.3.0) (2026-04-21)
+
+
+### Features
+
+* Invoke a release in order to verify updated release please configuration ([715122c](https://github.com/fortytwoservices/powershell-module-adopipelinelogging/commit/715122c376bca62ef2ea1cb99ad546581c0ae359))
+* Release ([121c036](https://github.com/fortytwoservices/powershell-module-adopipelinelogging/commit/121c0360b587f77c9de9f7825fbc364ae3b21f28))
+
 ## [0.2.0](https://github.com/fortytwoservices/powershell-module-adopipelinelogging/compare/v0.1.0...v0.2.0) (2025-12-05)
 
 
